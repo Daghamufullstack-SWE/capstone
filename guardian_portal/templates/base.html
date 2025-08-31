@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}SCODIS Guardian Portal{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/guardian.css' %}"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="{% static 'img/SCODIS-logo.png' %}" alt="SCODIS" class="logo"/>
+      <h1>SCODIS <span>Guardian Portal</span></h1>
+    </div>
+    <nav>
+      <a href="#" class="nav-link" data-section="overview">Overview</a>
+      <a href="#" class="nav-link" data-section="attendance">Attendance</a>
+      <a href="#" class="nav-link" data-section="grades">Grades</a>
+      <a href="#" class="nav-link" data-section="fees">Fees</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>&copy; {{ year|default:2025 }} SCODIS — School Data Integrated System</p>
+  </footer>
+
+  <script src="{% static 'js/guardian.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
