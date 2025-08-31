@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Guardian Dashboard — SCODIS{% endblock %}
+
+{% block content %}
+<section id="overview" class="card active">
+  <h2>Welcome, {{ user.get_full_name|default:user.username }}</h2>
+  <p>Student: <strong>{{ student_name }}</strong> | Class: <strong>{{ classroom }}</strong> | Admission No: <strong>{{ admission_number }}</strong></p>
+
+  <div class="grid">
+    <div class="stat">
+      <h3>Attendance (This Term)</h3>
+      <canvas id="attendanceChart"></canvas>
+    </div>
+    <div class="stat">
+      <h3>Average Grades</h3>
+      <canvas id="gradesChart"></canvas>
+    </div>
+    <div class="stat">
+      <h3>Fees Status</h3>
+      <ul id="feesSummary"></ul>
+    </div>
+  </div>
+</section>
+
+<section id="attendance" class="card">
+  <h2>Attendance Records</h2>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Status</th></tr>
+      </thead>
+      <tbody id="attendanceTable"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="grades" class="card">
+  <h2>Grades</h2>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr><th>Subject</th><th>Score</th><th>Exam Date</th></tr>
+      </thead>
+      <tbody id="gradesTable"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="fees" class="card">
+  <h2>Fees & Payments</h2>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr><th>Invoice #</th><th>Item</th><th>Amount</th><th>Status</th><th>Due</th></tr>
+      </thead>
+      <tbody id="feesTable"></tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
