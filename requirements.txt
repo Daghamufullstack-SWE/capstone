@@ -1,0 +1,7 @@
+django
+djangorestframework
+djangorestframework-simplejwt
+Pillow
+/home/Daghamufullstack-SWE/Capstone/scodis (manage.py)
+/home/Daghamufullstack-SWE/Capstone/recipe_box/scodis (settings.py)
+venv
